@@ -1,0 +1,3 @@
+[submodule "DLive"]
+	path = DLive
+	url = https://github.com/AlexisBlade2001/grayjay-dlive
