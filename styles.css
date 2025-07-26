@@ -1,0 +1,447 @@
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f0f0f0;
+    --bg-tertiary: #e0e0e0;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --border-color: #cccccc;
+    --accent-color: #873eff;
+    --accent-color-pressed: #6c32cc;
+
+    --card-bg: #ffffff;
+    --card-border: #e0e0e0;
+
+    --color-gs00: #ffffff;
+    --color-gs100: #000000;
+    --button-height: 36px;
+    --font-size-icon: 22px;
+    --border-radius: 4px;
+    --transition: all 0.2s ease;
+    --list-item-height: auto;
+    /* Changed to auto */
+    --il-icon-unfocused: #a6a6a6;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #000000;
+        --bg-secondary: #111111;
+        --bg-tertiary: #222222;
+        --text-primary: #ffffff;
+        --text-secondary: #8c9cb0;
+        --border-color: #333333;
+        --accent-color-pressed: #873eff;
+        --accent-color: #6c32cc;
+        --card-bg: #000000;
+        --card-border: #222222;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans", "Open Sans", Arial, sans-serif;
+}
+
+html {
+    font-size: 10px;
+}
+
+html,
+body,
+:root {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Open Sans';
+    font-size: 1.7rem;
+    line-height: 1.4;
+    min-height: 100vh;
+}
+
+header {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #9b27af;
+    padding: 3px 10px;
+}
+
+header h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+section {
+    flex: 1;
+    padding: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card {
+    min-height: var(--list-item-height);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+}
+
+.card-header {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.card-header .plugin-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--il-icon-unfocused);
+    /* margin-right: 1.2rem; */
+    background-color: var(--bg-secondary);
+    border-radius: 50%;
+    font-size: 3.2rem;
+    width: 4.2rem;
+    height: 4.2rem;
+    overflow: hidden;
+}
+
+.card-header .plugin-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.card-header .plugin-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    /* padding-right: 1rem; */
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-header .plugin-info .plugin-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-weight: 400;
+    font-size: 1.7rem;
+
+    color: var(--text-primary);
+}
+
+.card-header .plugin-info .plugin-description {
+    line-clamp: 2;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: var(--text-secondary);
+
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.card-content .plugin-meta {
+    color: var(--text-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.card-content .plugin-meta .plugin-version {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.card-content .plugin-meta .plugin-creator {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+
+.card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+button,
+.button {
+    user-select: none;
+    font-size: 1.7rem;
+    font-weight: 500;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    padding: 0 16px;
+    text-decoration: none;
+    color: var(--text-primary);
+    height: var(--button-height);
+    background-color: var(--bg-secondary);
+}
+
+button:focus,
+.button:focus {
+    background-color: var(--accent-color);
+    color: var(--color-gs00);
+    outline: none;
+}
+
+button:active,
+.button:active {
+    background-color: var(--accent-color-pressed);
+}
+
+details {
+    background: var(--bg-tertiary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+summary {
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    user-select: none;
+    outline: none;
+
+    padding: 0 1rem;
+    font-weight: 400;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--button-height);
+}
+
+summary:focus,
+details[open]:focus-within summary {
+    background-color: var(--accent-color);
+    outline: var(--accent-color) 1px solid;
+    color: var(--color-gs00);
+}
+
+details:focus-within,
+details[open]:focus-within {
+    outline: var(--accent-color) 1px solid;
+}
+
+summary:active {
+    background-color: var(--accent-color-pressed);
+}
+
+
+summary::after {
+    content: "▼";
+    font-size: 1.4rem;
+}
+
+details[open] summary::after {
+    transform: rotate(180deg);
+    outline: none;
+    ;
+}
+
+
+/*
+.changelog-content {
+    max-height: 15.2rem;
+    overflow-y: auto;
+    padding: 1rem;
+}
+*/
+/*
+.changelog-content {
+    max-height: 7.2rem;
+    overflow-y: auto;
+    padding: 1rem;
+}
+*/
+
+.changelog-content {
+    max-height: 12.2rem;
+    overflow-y: auto;
+    padding: 1rem;
+    outline: none;
+}
+
+.version:first-child {
+    padding-top: 0;
+}
+
+.version:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.version-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.4rem;
+}
+
+.changes-list {
+    padding-left: 1rem;
+    list-style-type: none;
+}
+
+.change-item {
+    margin: 0.4rem 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+.change-type {
+    font-weight: 600;
+    margin-right: 0.2rem;
+}
+
+.fix {
+    color: #ffca28;
+}
+
+.feature {
+    color: #29b6f6;
+}
+
+.improvement {
+    color: #66bb6a;
+}
+
+.hotfix {
+    color: #e53935;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    font-weight: 400;
+}
+
+.changelog-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.changelog-content::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius);
+}
+
+/* ----------------------------------
+ * Font
+ * ---------------------------------- */
+
+h1,
+.h1 {
+    /** Text for Header, Light
+     ---------------------------------------------------------*/
+    font-weight: 300;
+    font-size: 1.7rem;
+}
+
+h2,
+.h2 {
+    /** Header of body texts, Semi-Bold
+     ---------------------------------------------------------*/
+    font-weight: 600;
+    font-size: 1.7rem;
+}
+
+h3,
+.h3 {
+    /** Text for Tabs, Regular
+     ---------------------------------------------------------*/
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+h4,
+.h4 {
+    /** Text for Separators, Regular
+     ---------------------------------------------------------*/
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+h5,
+.h5 {
+    /** Text for Software keys, Regular
+     ---------------------------------------------------------*/
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+:root:not([lang|='fr']) h1,
+:root:not([lang|='fr']) .h1,
+:root:not([lang|='fr']) h3,
+:root:not([lang|='fr']) .h3,
+:root:not([lang|='fr']) h4,
+:root:not([lang|='fr']) .h4,
+:root:not([lang|='fr']) h5,
+:root:not([lang|='fr']) .h5 {
+    text-transform: capitalize;
+}
+
+p,
+.p,
+ul,
+.ul {
+    /** Body texts, Regular
+     ---------------------------------------------------------*/
+    font-weight: 400;
+    font-size: 1.7rem;
+}
+
+a,
+.p-link {
+    /** Text for hyperlink, Bold, Underline
+     ---------------------------------------------------------*/
+    font-weight: 700;
+    font-size: 1.7rem;
+    text-decoration: underline;
+}
+
+a:focus,
+.p-link:focus {
+    outline: 2px solid var(--accent-color);
+}
