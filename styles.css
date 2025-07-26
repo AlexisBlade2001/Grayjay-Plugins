@@ -18,7 +18,6 @@
     --border-radius: 4px;
     --transition: all 0.2s ease;
     --list-item-height: auto;
-    /* Changed to auto */
     --il-icon-unfocused: #a6a6a6;
 }
 
@@ -274,7 +273,6 @@ details[open] summary::after {
     ;
 }
 
-
 /*
 .changelog-content {
     max-height: 15.2rem;
@@ -367,46 +365,32 @@ details[open] summary::after {
     border-radius: var(--border-radius);
 }
 
-/* ----------------------------------
- * Font
- * ---------------------------------- */
-
 h1,
 .h1 {
-    /** Text for Header, Light
-     ---------------------------------------------------------*/
     font-weight: 300;
     font-size: 1.7rem;
 }
 
 h2,
 .h2 {
-    /** Header of body texts, Semi-Bold
-     ---------------------------------------------------------*/
     font-weight: 600;
     font-size: 1.7rem;
 }
 
 h3,
 .h3 {
-    /** Text for Tabs, Regular
-     ---------------------------------------------------------*/
     font-weight: 400;
     font-size: 1.4rem;
 }
 
 h4,
 .h4 {
-    /** Text for Separators, Regular
-     ---------------------------------------------------------*/
     font-weight: 400;
     font-size: 1.4rem;
 }
 
 h5,
 .h5 {
-    /** Text for Software keys, Regular
-     ---------------------------------------------------------*/
     font-weight: 600;
     font-size: 1.4rem;
 }
@@ -426,16 +410,12 @@ p,
 .p,
 ul,
 .ul {
-    /** Body texts, Regular
-     ---------------------------------------------------------*/
     font-weight: 400;
     font-size: 1.7rem;
 }
 
 a,
 .p-link {
-    /** Text for hyperlink, Bold, Underline
-     ---------------------------------------------------------*/
     font-weight: 700;
     font-size: 1.7rem;
     text-decoration: underline;
