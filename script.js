@@ -1,4 +1,4 @@
-const plugins = ['DLive'];
+const plugins = ['DLive', 'Trovo'];
 
 async function loadPlugins() {
     const section = document.querySelector('.plugin-list');

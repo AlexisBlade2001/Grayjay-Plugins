@@ -1,3 +1,6 @@
 [submodule "DLive"]
 	path = DLive
 	url = https://github.com/AlexisBlade2001/grayjay-dlive
+[submodule "Trovo"]
+	path = Trovo
+	url = https://github.com/AlexisBlade2001/Grayjay-Trovo
